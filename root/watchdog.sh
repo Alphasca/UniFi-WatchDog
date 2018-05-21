@@ -104,5 +104,5 @@ if [ "$[$timenow-$watchdogdelay]" -ge "$delay" ] ; then
 		fi
 	fi
 else
-	echo "`date '+%Y-%m-%d %H:%M:%S'` - STARTUP DELAY. Need waite $delay sec for start monitoring." >> $watchdoglogfily
+	echo "`date '+%Y-%m-%d %H:%M:%S'` - STARTUP DELAY. Need waite $[$delay-$[$[$timenow-$watchdogdelay]]] sec for start monitoring." >> $watchdoglogfile
 fi
